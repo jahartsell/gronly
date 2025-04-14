@@ -11,11 +11,18 @@ version.workspace = true
 [lints]
 workspace = true
 
+[features]
+default = []
+alloc = ["allocator-api2/alloc"]
+std = ["alloc", "allocator-api2/std"]
+
 [dependencies]
 gronly-atomics = { workspace = true }
+allocator-api2 = { version = "0.2", default-features = false, features = [] }
 
 [dev-dependencies]
 gronly-atomics = { workspace = true, features = ["std", "macros"] }
+papaya = "0.2"
 
 [workspace]
 resolver = "2"
