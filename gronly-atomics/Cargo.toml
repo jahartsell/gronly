@@ -1,0 +1,25 @@
+[package]
+name = "gronly-atomics"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+
+[lints]
+workspace = true
+
+[features]
+default = []
+alloc = []
+std = ["alloc"]
+macros = ["gronly-atomics-macros"]
+
+[dependencies]
+gronly-atomics-macros = { workspace = true, optional = true }
+cfg-if = "1.0"
+
+[target.'cfg(loom)'.dependencies]
+loom = "0.7"
+
+[target.'cfg(shuttle)'.dependencies]
+shuttle = "0.8"

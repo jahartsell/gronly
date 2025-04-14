@@ -1,0 +1,23 @@
+[package]
+name = "gronly-atomics-macros"
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+version.workspace = true
+
+[lib]
+proc-macro = true
+
+[lints]
+workspace = true
+
+[dependencies]
+darling = "0.20"
+proc-macro2 = { version = "1.0", default-features = false, features = ["proc-macro"] }
+quote = { version = "1.0", default-features = false, features = ["proc-macro"] }
+syn = { version = "2.0", default-features = false, features = ["full", "parsing", "proc-macro"] }
+
+[dev-dependencies]
+prettyplease = "0.2"
+syn = { version = "2.0", default-features = false, features = ["printing", "extra-traits"] }
